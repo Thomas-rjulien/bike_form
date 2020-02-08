@@ -1,9 +1,26 @@
-<h1>BIKE RENTAL FORM</h1>
-<%= simple_form_for(booking) do |f| %>
-div
-  <%= f.input :name, as: :string %>
-  <%= f.input :email %>
-  <%= f.input :email %>
-  <%= f.input :email %>
+<div class="container">
+  <h1 class="text-center">BIKE RENTAL FORM</h1>
+  <%= simple_form_for booking_new_path do |f| %>
+  <div class="row">
+    <div class= "col-6">
+      <%= f.input :name, as: :string, placeholder: "name", label: false %>
+    </div>
+    <div class="col-6">
+      <%= f.input :email, placeholder: "email", label: false %>
+    </div>
+  </div>
+  <%= f.input :citybike, collection: (0..11), prompt: "Number of city bikes", label: false  %>
+  <%= f.input :trekking, collection: (0..11), prompt: "Number of trekking bikes", label: false  %>
+  <%= f.input :gravel, collection: (0..11), prompt: "Number of gravel bikes", label: false  %>
+  <%= f.input :electric, collection: (0..11), prompt: "Number of electric bikes 500 WH", label: false  %>
+  <%= f.input :heights, placeholder: "Your heights", label: false %>
+  <h3>Options</h3>
+  <%= f.input :saddlebag, as: :boolean %>
+  <%= f.input :saddlebag, as: :boolean %>
+  <%= f.input :saddlebag, as: :boolean %>
+  <%= f.input :saddlebag, as: :boolean %>
+  <%= f.input :saddlebag, as: :boolean %>
+  <%= f.input :saddlebag, as: :boolean %>
   <%= f.submit %>
-<% end %>
+  <% end %>
+</div>

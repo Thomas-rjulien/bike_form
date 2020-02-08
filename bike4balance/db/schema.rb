@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_211617) do
+ActiveRecord::Schema.define(version: 2020_02_08_154124) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "email"
@@ -21,16 +21,16 @@ ActiveRecord::Schema.define(version: 2020_01_13_211617) do
     t.date "checkout"
     t.integer "citybike"
     t.integer "trekking"
-    t.integer "cyclo"
+    t.integer "gravel"
     t.integer "electric"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "saddlebag", default: false
-    t.boolean "insurance", default: false
-    t.boolean "baby_chair", default: false
-    t.boolean "spd_pedals", default: false
-    t.boolean "hitch_bike_racks", default: false
-    t.boolean "trunk_bike_rack", default: false
+    t.boolean "saddlebag"
+    t.boolean "insurance"
+    t.boolean "baby_chair"
+    t.boolean "spd_pedals"
+    t.boolean "hitch_bike_racks"
+    t.boolean "trunk_bike_rack"
   end
 
 end
