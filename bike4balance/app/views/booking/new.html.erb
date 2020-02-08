@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1 class="text-center">BIKE RENTAL FORM</h1>
   <%= simple_form_for booking_new_path do |f| %>
@@ -15,12 +16,46 @@
   <%= f.input :electric, collection: (0..11), prompt: "Number of electric bikes 500 WH", label: false  %>
   <%= f.input :heights, placeholder: "Your heights", label: false %>
   <h3>Options</h3>
-  <%= f.input :saddlebag, as: :boolean %>
-  <%= f.input :saddlebag, as: :boolean %>
-  <%= f.input :saddlebag, as: :boolean %>
-  <%= f.input :saddlebag, as: :boolean %>
-  <%= f.input :saddlebag, as: :boolean %>
-  <%= f.input :saddlebag, as: :boolean %>
+  <div class="row">
+    <div class="col-4">
+      <%= f.input :saddlebag, as: :boolean %>
+    </div>
+    <div class="col-4">
+      <%= f.input :insurance, as: :boolean %>
+    </div>
+    <div class="col-4">
+      <%= f.input :baby_chair, as: :boolean %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <%= f.input :spd_pedals, as: :boolean %>
+    </div>
+    <div class="col-4">
+      <%= f.input :hitch_bike_racks, as: :boolean %>
+    </div>
+    <div class="col-4">
+      <%= f.input :trunk_bike_rack, as: :boolean %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+    <%= f.input :one_day_tour, required: false, collection: ["Villeneuve & island", "Frigolet forest", "Tavel", "Chateauneuf du pape", "Isle sur la Sorgue", "Fontaine de Vaucluse", "Orange", "Saint Remy de Provence", "Les Baux de Provence", "Pont du Gard", "Mont Ventoux"] %>
+    </div>
+    <div class="col-6">
+      <%= f.input :multi_day_tour, required: false, collection: ["Arles & Alpilles", "Arles Alpilles & Gard", "Luberon North", "Luberon North & South", "Dentelles de Montmirail", "Lavender", "Mont Ventoux", "Tour of Provence"] %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <%= f.input :checkin, as: :string, required: true, input_html: {class: "datepicker"} %>
+    </div>
+    <div class="col-6">
+      <%= f.input :number_of_days, collection: [0.5, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10], required: true %>
+    </div>
+  </div>
+  <%= f.input :comment, as: :text, required: false %>
+  <p id="price"><%= compute_price(@booking) if @booking.number_of_days != nil %></p>
   <%= f.submit %>
   <% end %>
 </div>

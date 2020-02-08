@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_08_154124) do
+ActiveRecord::Schema.define(version: 2020_02_08_175059) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "email"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_154124) do
     t.text "heights"
     t.text "comment"
     t.date "checkin"
-    t.date "checkout"
+    t.float "number_of_days", default: 0
     t.integer "citybike"
     t.integer "trekking"
     t.integer "gravel"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2020_02_08_154124) do
     t.boolean "spd_pedals"
     t.boolean "hitch_bike_racks"
     t.boolean "trunk_bike_rack"
+    t.string "one_day_tour"
+    t.string "multi_day_tour"
   end
 
 end
