@@ -1,2 +1,9 @@
-<h1>Booking#new</h1>
-<p>Find me in app/views/booking/new.html.erb</p>
+<h1>BIKE RENTAL FORM</h1>
+<%= simple_form_for(booking) do |f| %>
+div
+  <%= f.input :name, as: :string %>
+  <%= f.input :email %>
+  <%= f.input :email %>
+  <%= f.input :email %>
+  <%= f.submit %>
+<% end %>
